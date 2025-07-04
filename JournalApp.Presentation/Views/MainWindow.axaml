@@ -1,0 +1,27 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:JournalApp.Business.ViewModels;assembly=JournalApp.Business"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="300"
+        x:Class="JournalApp.Presentation.Views.MainWindow"
+        x:DataType="viewModels:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Login"
+        Background="#1e1e1e">
+
+    <Design.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid RowDefinitions="*,Auto" Margin="10">
+        <TransitioningContentControl Content="{Binding CurrentPage}" />
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="5"
+                    HorizontalAlignment="Right">
+            <Button Command="{Binding NavigatePreviousCommand}" Content="Back" />
+            <Button Command="{Binding NavigateNextCommand}" Content="{Binding Path=NextButtonContent}" />
+        </StackPanel>
+    </Grid>
+
+</Window>
