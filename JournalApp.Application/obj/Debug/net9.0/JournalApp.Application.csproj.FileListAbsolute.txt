@@ -28,3 +28,4 @@
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Application/obj/Debug/net9.0/refint/JournalApp.Application.dll
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Application/obj/Debug/net9.0/JournalApp.Application.pdb
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Application/obj/Debug/net9.0/ref/JournalApp.Application.dll
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Application/obj/Debug/net9.0/JournalApp.Application.sourcelink.json

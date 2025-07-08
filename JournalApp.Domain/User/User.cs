@@ -8,7 +8,7 @@ public class User()
         Password = password;
     }
 
-    public int Id { get; set; }
-    public string UserName { get; set; } = string.Empty;
+    public int Id { get; init; }
+    public string UserName { get; init; } = string.Empty;
     public string Password { get; private set; } = string.Empty;
 }

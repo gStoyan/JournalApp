@@ -20,3 +20,4 @@
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Contracts/obj/Debug/net9.0/refint/JournalApp.Contracts.dll
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Contracts/obj/Debug/net9.0/JournalApp.Contracts.pdb
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Contracts/obj/Debug/net9.0/ref/JournalApp.Contracts.dll
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Contracts/obj/Debug/net9.0/JournalApp.Contracts.sourcelink.json

@@ -18,7 +18,7 @@ public partial class MainWindowViewModel : ViewModelBase
         _pages =
         [
             new HomeViewModel(userService),
-            new LoginViewModel()
+            new LoginViewModel(userService)
         ];
 
         _currentPage = _pages[0];

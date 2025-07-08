@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "27I19ZB4X3Y=",
+  "dgSpecHash": "6uf+Hf8D92U=",
   "success": true,
   "projectFilePath": "/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/JournalApp.Presentation.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/sgrancharov/.nuget/packages/avalonia.themes.simple/11.3.2/avalonia.themes.simple.11.3.2.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia.win32/11.3.2/avalonia.win32.11.3.2.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia.x11/11.3.2/avalonia.x11.11.3.2.nupkg.sha512",
+    "/Users/sgrancharov/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/communitytoolkit.mvvm/8.4.0/communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/dialoghost.avalonia/0.8.1/dialoghost.avalonia.0.8.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/dynamicdata/9.3.2/dynamicdata.9.3.2.nupkg.sha512",

@@ -7,11 +7,10 @@ public class CreateUserCommandHandler(IUserRepository userRepository) : IRequest
 {
     public Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
     {
-        var user = new User(request.UserName, request.Password);
-
-        // Validate the user data here if necessary
+        var hash = BCrypt.Net.BCrypt.HashPassword(request.Password);
+        var user = new User(request.UserName, hash);
+        
         var userId = userRepository.Add(user);
-
         return Task.FromResult(userId);
     }
 }

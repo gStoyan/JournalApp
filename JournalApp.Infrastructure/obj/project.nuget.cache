@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fIDQWHgU8R0=",
+  "dgSpecHash": "b8j2TU9RTnY=",
   "success": true,
   "projectFilePath": "/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/Users/sgrancharov/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/mediatr/12.5.0/mediatr.12.5.0.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",

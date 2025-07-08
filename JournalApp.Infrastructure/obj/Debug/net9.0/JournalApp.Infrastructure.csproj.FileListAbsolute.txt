@@ -36,3 +36,4 @@
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/obj/Debug/net9.0/JournalApp.Infrastructure.pdb
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/obj/Debug/net9.0/JournalApp.Infrastructure.genruntimeconfig.cache
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/obj/Debug/net9.0/ref/JournalApp.Infrastructure.dll
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/obj/Debug/net9.0/JournalApp.Infrastructure.sourcelink.json

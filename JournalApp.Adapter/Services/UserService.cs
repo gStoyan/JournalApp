@@ -1,4 +1,5 @@
 using JournalApp.Application.Commands.CreateUser;
+using JournalApp.Application.Commands.LoginUser;
 using JournalApp.Contracts;
 using JournalApp.Contracts.Services;
 using MediatR;
@@ -9,12 +10,12 @@ public class UserService(IMediator mediator) : IUserService
 {
     private readonly IMediator _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
 
-    public Task<UserDetails?> GetUserByIdAsync(Guid userId)
+    public Task<UserDto> GetUserByIdAsync(int userId)
     {
         throw new NotImplementedException();
     }
 
-    public Task<UserDetails?> GetUserByEmailAsync(string email)
+    public Task<UserDto> GetUserByEmailAsync(string email)
     {
         throw new NotImplementedException();
     }
@@ -34,13 +35,29 @@ public class UserService(IMediator mediator) : IUserService
     {
         throw new NotImplementedException();
     }
+    
+    
 
     public async Task<int> CreateUserAsync(string userName,
         string password)
     {
+        
         var command = new CreateUserCommand(userName, password);
         var result = await _mediator.Send(command);
 
         return result;
+    }
+
+    public async Task<UserDto> LoginAsync(string userName, string password)
+    {
+        var command = new LoginUserCommand(userName, password);
+        var result = await _mediator.Send(command);
+
+        var userDto = new UserDto()
+        {
+            UserName = result.UserName,
+            Id = result.Id,
+        };
+        return userDto;
     }
 }

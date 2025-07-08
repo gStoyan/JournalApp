@@ -40,3 +40,4 @@
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Adapter/obj/Debug/net9.0/refint/JournalApp.Adapter.dll
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Adapter/obj/Debug/net9.0/JournalApp.Adapter.pdb
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Adapter/obj/Debug/net9.0/ref/JournalApp.Adapter.dll
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Adapter/obj/Debug/net9.0/JournalApp.Adapter.sourcelink.json

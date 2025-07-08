@@ -1,13 +1,17 @@
 using CommunityToolkit.Mvvm.Input;
+using JournalApp.Business.Helpers;
 using JournalApp.Business.ViewModels.Base;
+using JournalApp.Contracts.Services;
 using MsBox.Avalonia;
 
 namespace JournalApp.Business.ViewModels;
 
-public partial class LoginViewModel : PageViewModelBase
+public partial class LoginViewModel(IUserService userService) : PageViewModelBase
 {
-    public string UserName { get; set; }
-    public string Password { get; set; }
+    private readonly IUserService _userService = userService;
+
+    public string UserName { get; set; } = string.Empty;
+    public string Password { get; set; } = string.Empty;
 
     public override bool CanNavigateNext
     {
@@ -24,17 +28,20 @@ public partial class LoginViewModel : PageViewModelBase
     [RelayCommand]
     private async Task Login()
     {
-        if (UserName is "admin" && Password is "password")
-            await ShowAsync("Login successful");
-        else
-            await ShowAsync("Login failed");
-    }
+        if (string.IsNullOrWhiteSpace(UserName) || string.IsNullOrWhiteSpace(Password))
+        {
+            await MessageBoxHelper.ShowAsync("Login", "Username and password cannot be empty.");
+            return;
+        }
 
-    private async Task ShowAsync(string message)
-    {
-        var box = MessageBoxManager.GetMessageBoxStandard("Login",
-            message);
-
-        await box.ShowAsync();
+        try
+        {
+            var user = await _userService.LoginAsync(UserName, Password);
+            await MessageBoxHelper.ShowAsync("Login", $"Welcome {user.UserName}!");
+        }
+        catch (Exception e)
+        {
+            throw new InvalidOperationException("Failed to login user.", e);
+        }
     }
 }

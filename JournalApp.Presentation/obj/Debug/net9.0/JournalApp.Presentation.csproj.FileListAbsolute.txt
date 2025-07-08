@@ -270,3 +270,5 @@
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/obj/Debug/net9.0/JournalApp.Presentation.pdb
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/obj/Debug/net9.0/JournalApp.Presentation.genruntimeconfig.cache
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/obj/Debug/net9.0/ref/JournalApp.Presentation.dll
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/obj/Debug/net9.0/JournalApp.Presentation.sourcelink.json
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/bin/Debug/net9.0/BCrypt.Net-Next.dll

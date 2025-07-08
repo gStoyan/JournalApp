@@ -46,3 +46,4 @@
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Business/obj/Debug/net9.0/refint/JournalApp.Business.dll
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Business/obj/Debug/net9.0/JournalApp.Business.pdb
 /Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Business/obj/Debug/net9.0/ref/JournalApp.Business.dll
+/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Business/obj/Debug/net9.0/JournalApp.Business.sourcelink.json
