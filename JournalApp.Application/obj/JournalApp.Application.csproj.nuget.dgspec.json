@@ -54,7 +54,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.5.0, )"
+              "version": "[13.0.0, )"
             }
           },
           "imports": [

@@ -2,19 +2,23 @@
 using DynamicData;
 using JournalApp.Business.ViewModels.Base;
 using JournalApp.Contracts.Services;
+using Microsoft.Extensions.Logging;
 using ReactiveUI;
+using Serilog;
 
 namespace JournalApp.Business.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
+    private readonly ILogger<MainWindowViewModel> _logger;
     private readonly PageViewModelBase[] _pages;
 
     private PageViewModelBase _currentPage;
     private string _nextButtonContent = "Login";
 
-    public MainWindowViewModel(IUserService userService)
+    public MainWindowViewModel(IUserService userService, ILogger<MainWindowViewModel> logger)
     {
+        _logger = logger;
         _pages =
         [
             new HomeViewModel(userService),
@@ -33,6 +37,7 @@ public partial class MainWindowViewModel : ViewModelBase
     public string NextButtonContent
     {
         get => _nextButtonContent;
+
         set => SetProperty(ref _nextButtonContent, value);
     }
 
@@ -52,7 +57,7 @@ public partial class MainWindowViewModel : ViewModelBase
 
         if (index >= _pages.Length) return;
         CurrentPage = _pages[index];
-        NextButtonContent = index == 0 ? "Login" : "Continue";
+        Log.Information("Navigated to next page");
     }
 
 

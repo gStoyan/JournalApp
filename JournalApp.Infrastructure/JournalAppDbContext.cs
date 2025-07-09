@@ -1,17 +1,18 @@
 using JournalApp.Domain.User;
-using JournalApp.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace JournalApp.Infrastructure;
 
-public class JournalAppDbContext : DbContext
+public class JournalAppDbContext(IConfiguration configuration) : DbContext
 {
+    private readonly IConfiguration _configuration = configuration;
+
     public DbSet<User> Users { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        var dbPath = DatabaseConfiguration.GetDatabasePath();
-        optionsBuilder.UseSqlite($"Data Source={dbPath}");
+        optionsBuilder.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,0 +1,31 @@
+2025-07-09 11:54:08.387 +03:00 [INF] Hello, This is my log!
+2025-07-09 11:54:08.442 +03:00 [INF] Registering database
+2025-07-09 11:54:09.117 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 11:54:11.506 +03:00 [INF] Navigated to next page
+2025-07-09 12:12:42.626 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:12:43.364 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:13:02.082 +03:00 [INF] Navigated to next page
+2025-07-09 12:13:28.989 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:13:29.697 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:13:36.437 +03:00 [INF] Navigated to next page
+2025-07-09 12:14:59.911 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:15:00.648 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:15:03.092 +03:00 [INF] Navigated to next page
+2025-07-09 12:16:42.068 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:16:42.775 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:16:44.834 +03:00 [INF] Navigated to next page
+2025-07-09 12:17:19.530 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:17:20.002 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:17:21.439 +03:00 [INF] Navigated to next page
+2025-07-09 12:18:30.206 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:18:30.660 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:18:32.978 +03:00 [INF] Navigated to next page
+2025-07-09 12:18:46.477 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:18:46.920 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:18:48.373 +03:00 [INF] Navigated to next page
+2025-07-09 12:23:20.073 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:23:20.566 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2025-07-09 12:23:22.154 +03:00 [INF] Navigated to next page
+2025-07-09 12:23:25.919 +03:00 [INF] Navigated to next page
+2025-07-09 12:33:19.363 +03:00 [INF] Hello, This is my log!
+2025-07-09 12:33:19.815 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
