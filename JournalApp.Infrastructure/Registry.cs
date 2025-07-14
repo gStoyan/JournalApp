@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Serilog;
+using Serilog.Events;
+
+#pragma warning disable CS8604 // Possible null reference argument.
 
 namespace JournalApp.Infrastructure;
 
@@ -18,8 +21,11 @@ public static class Registry
 
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()
+            .Filter.ByExcluding(logEvent =>
+                logEvent.Level == LogEventLevel.Warning &&
+                logEvent.RenderMessage().Contains("Lucky Penny software MediatR"))
             .WriteTo.Console()
-            .WriteTo.File("Log_SerilogDemo.txt", rollingInterval: RollingInterval.Day)
+            .WriteTo.File(config.GetSection("Logging").GetValue<string>("Path"), rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
         services.AddLogging(logging =>

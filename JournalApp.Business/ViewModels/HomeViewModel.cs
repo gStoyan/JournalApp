@@ -11,17 +11,9 @@ public partial class HomeViewModel(IUserService userService) : PageViewModelBase
     public string Password { get; set; } = string.Empty;
     public string ConfirmPassword { get; set; } = string.Empty;
 
-    public override bool CanNavigateNext
-    {
-        get => true;
-        protected set => throw new NotSupportedException();
-    }
+    public override bool CanNavigateNext { get; protected set; } = true;
 
-    public override bool CanNavigatePrevious
-    {
-        get => true;
-        protected set => throw new NotSupportedException();
-    }
+    public override bool CanNavigatePrevious { get; protected set; } = false;
 
     [RelayCommand]
     private async Task Register()
@@ -30,12 +22,13 @@ public partial class HomeViewModel(IUserService userService) : PageViewModelBase
             string.IsNullOrWhiteSpace(Password) ||
             string.IsNullOrWhiteSpace(ConfirmPassword))
         {
-            await MessageBoxHelper.ShowAsync("Register","Username, password, and confirm password cannot be empty.");
+            await MessageBoxHelper.ShowAsync("Register", "Username, password, and confirm password cannot be empty.");
             return;
         }
+
         if (Password != ConfirmPassword)
         {
-            await MessageBoxHelper.ShowAsync("Register","Passwords do not match.");
+            await MessageBoxHelper.ShowAsync("Register", "Passwords do not match.");
             return;
         }
 

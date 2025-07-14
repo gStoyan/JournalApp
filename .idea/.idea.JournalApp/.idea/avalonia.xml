@@ -4,6 +4,10 @@
     <option name="projectPerEditor">
       <map>
         <entry key="JournalApp.Presentation/App.axaml" value="JournalApp.Presentation/JournalApp.Presentation.csproj" />
+        <entry key="JournalApp.Presentation/Views/HomeView.axaml" value="JournalApp.Presentation/JournalApp.Presentation.csproj" />
+        <entry key="JournalApp.Presentation/Views/JournalView.axaml" value="JournalApp.Presentation/JournalApp.Presentation.csproj" />
+        <entry key="JournalApp.Presentation/Views/LoginView.axaml" value="JournalApp.Presentation/JournalApp.Presentation.csproj" />
+        <entry key="JournalApp.Presentation/Views/MainWindow.axaml" value="JournalApp.Presentation/JournalApp.Presentation.csproj" />
       </map>
     </option>
   </component>

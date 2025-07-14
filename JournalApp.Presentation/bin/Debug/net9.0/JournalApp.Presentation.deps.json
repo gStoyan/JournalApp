@@ -16,6 +16,7 @@
           "Avalonia.Fonts.Inter": "11.3.2",
           "Avalonia.ReactiveUI": "11.3.2",
           "Avalonia.Themes.Fluent": "11.3.2",
+          "AvaloniaUI.DiagnosticsSupport": "2.0.4",
           "JournalApp.Business": "1.0.0",
           "Microsoft.Extensions.Configuration": "9.0.7",
           "Microsoft.Extensions.Configuration.Json": "9.0.7",
@@ -276,6 +277,21 @@
           "lib/net8.0/Avalonia.X11.dll": {
             "assemblyVersion": "11.3.2.0",
             "fileVersion": "11.3.2.0"
+          }
+        }
+      },
+      "AvaloniaUI.DiagnosticsSupport/2.0.4": {
+        "dependencies": {
+          "Avalonia": "11.3.2",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.7",
+          "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
+          "System.Diagnostics.DiagnosticSource": "8.0.1",
+          "System.Text.Json": "9.0.7"
+        },
+        "runtime": {
+          "lib/net8.0/AvaloniaUI.DiagnosticsSupport.Avalonia.dll": {
+            "assemblyVersion": "2.0.4.0",
+            "fileVersion": "2.0.4.0"
           }
         }
       },
@@ -770,6 +786,14 @@
           }
         }
       },
+      "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+        "runtime": {
+          "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.1.0"
+          }
+        }
+      },
       "ReactiveUI/20.4.1": {
         "dependencies": {
           "DynamicData": "9.4.1",
@@ -1069,6 +1093,7 @@
         }
       },
       "System.ComponentModel.Annotations/5.0.0": {},
+      "System.Diagnostics.DiagnosticSource/8.0.1": {},
       "System.IO.Pipelines/8.0.0": {},
       "System.Memory/4.5.3": {},
       "System.Reactive/6.0.1": {
@@ -1305,6 +1330,13 @@
       "sha512": "sha512-MEMXOIaAr6jMtl9BhJ8sj7Vz+z19dWfcryWksV35LsolQhQmjmzJPVcCppdnvm5HxkohUXB1qN1RqWN1cqRwBQ==",
       "path": "avalonia.x11/11.3.2",
       "hashPath": "avalonia.x11.11.3.2.nupkg.sha512"
+    },
+    "AvaloniaUI.DiagnosticsSupport/2.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G/bV3fA8u5dkl5KAJpMYVrGi+tqWAzMIPRnKpG4OR7aylDwsdXz/7Bp+3MmHbkbAzEfUoNJmeLsayeRPOOIRhQ==",
+      "path": "avaloniaui.diagnosticssupport/2.0.4",
+      "hashPath": "avaloniaui.diagnosticssupport.2.0.4.nupkg.sha512"
     },
     "BCrypt.Net-Next/4.0.3": {
       "type": "package",
@@ -1593,6 +1625,13 @@
       "path": "microsoft.identitymodel.tokens/8.0.1",
       "hashPath": "microsoft.identitymodel.tokens.8.0.1.nupkg.sha512"
     },
+    "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s/s20YTVY9r9TPfTrN5g8zPF1YhwxyqO6PxUkrYTGI2B+OGPe9AdajWZrLhFqXIvqIW23fnUE4+ztrUWNU1+9g==",
+      "path": "microsoft.io.recyclablememorystream/3.0.1",
+      "hashPath": "microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512"
+    },
     "ReactiveUI/20.4.1": {
       "type": "package",
       "serviceable": true,
@@ -1718,6 +1757,13 @@
       "sha512": "sha512-dMkqfy2el8A8/I76n2Hi1oBFEbG1SfxD2l5nhwXV3XjlnOmwxJlQbYpJH4W51odnU9sARCSAgv7S3CyAFMkpYg==",
       "path": "system.componentmodel.annotations/5.0.0",
       "hashPath": "system.componentmodel.annotations.5.0.0.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vaoWjvkG1aenR2XdjaVivlCV9fADfgyhW5bZtXT23qaEea0lWiUljdQuze4E31vKM7ZWJaSUsbYIKE3rnzfZUg==",
+      "path": "system.diagnostics.diagnosticsource/8.0.1",
+      "hashPath": "system.diagnostics.diagnosticsource.8.0.1.nupkg.sha512"
     },
     "System.IO.Pipelines/8.0.0": {
       "type": "package",

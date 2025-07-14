@@ -24,6 +24,7 @@
 /Users/sgrancharov/.nuget/packages/avalonia.win32/11.3.2/lib/net8.0/Avalonia.Win32.Automation.dll
 /Users/sgrancharov/.nuget/packages/avalonia.win32/11.3.2/lib/net8.0/Avalonia.Win32.dll
 /Users/sgrancharov/.nuget/packages/avalonia.x11/11.3.2/lib/net8.0/Avalonia.X11.dll
+/Users/sgrancharov/.nuget/packages/avaloniaui.diagnosticssupport/2.0.4/lib/net8.0/AvaloniaUI.DiagnosticsSupport.Avalonia.dll
 /Users/sgrancharov/.nuget/packages/bcrypt.net-next/4.0.3/lib/net6.0/BCrypt.Net-Next.dll
 /Users/sgrancharov/.nuget/packages/communitytoolkit.mvvm/8.4.0/lib/net8.0/CommunityToolkit.Mvvm.dll
 /Users/sgrancharov/.nuget/packages/dialoghost.avalonia/0.8.1/lib/netstandard2.0/DialogHost.Avalonia.dll
@@ -65,6 +66,7 @@
 /Users/sgrancharov/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.1/lib/net9.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/sgrancharov/.nuget/packages/microsoft.identitymodel.logging/8.0.1/lib/net9.0/Microsoft.IdentityModel.Logging.dll
 /Users/sgrancharov/.nuget/packages/microsoft.identitymodel.tokens/8.0.1/lib/net9.0/Microsoft.IdentityModel.Tokens.dll
+/Users/sgrancharov/.nuget/packages/microsoft.io.recyclablememorystream/3.0.1/lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.0/ref/net9.0/Microsoft.VisualBasic.Core.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.0/ref/net9.0/Microsoft.VisualBasic.dll
 /usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.0/ref/net9.0/Microsoft.Win32.Primitives.dll

@@ -2,28 +2,22 @@ using CommunityToolkit.Mvvm.Input;
 using JournalApp.Business.Helpers;
 using JournalApp.Business.ViewModels.Base;
 using JournalApp.Contracts.Services;
-using MsBox.Avalonia;
 
 namespace JournalApp.Business.ViewModels;
 
 public partial class LoginViewModel(IUserService userService) : PageViewModelBase
 {
-    private readonly IUserService _userService = userService;
-
+    private bool _canNavigateNext;
     public string UserName { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
 
     public override bool CanNavigateNext
     {
-        get => true;
-        protected set => throw new NotSupportedException();
+        get => _canNavigateNext;
+        protected set => SetProperty(ref _canNavigateNext, value);
     }
 
-    public override bool CanNavigatePrevious
-    {
-        get => true;
-        protected set => throw new NotSupportedException();
-    }
+    public override bool CanNavigatePrevious { get; protected set; } = true;
 
     [RelayCommand]
     private async Task Login()
@@ -36,8 +30,9 @@ public partial class LoginViewModel(IUserService userService) : PageViewModelBas
 
         try
         {
-            var user = await _userService.LoginAsync(UserName, Password);
+            var user = await userService.LoginAsync(UserName, Password);
             await MessageBoxHelper.ShowAsync("Login", $"Welcome {user.UserName}!");
+            CanNavigateNext = true;
         }
         catch (Exception e)
         {

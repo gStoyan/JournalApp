@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bcN0qrHOC04=",
+  "dgSpecHash": "0qTCdDWg0wE=",
   "success": true,
   "projectFilePath": "/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/JournalApp.Presentation.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/sgrancharov/.nuget/packages/avalonia.themes.simple/11.3.2/avalonia.themes.simple.11.3.2.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia.win32/11.3.2/avalonia.win32.11.3.2.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia.x11/11.3.2/avalonia.x11.11.3.2.nupkg.sha512",
+    "/Users/sgrancharov/.nuget/packages/avaloniaui.diagnosticssupport/2.0.4/avaloniaui.diagnosticssupport.2.0.4.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/communitytoolkit.mvvm/8.4.0/communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/dialoghost.avalonia/0.8.1/dialoghost.avalonia.0.8.1.nupkg.sha512",
@@ -62,6 +63,7 @@
     "/Users/sgrancharov/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.1/microsoft.identitymodel.jsonwebtokens.8.0.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/microsoft.identitymodel.logging/8.0.1/microsoft.identitymodel.logging.8.0.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/microsoft.identitymodel.tokens/8.0.1/microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
+    "/Users/sgrancharov/.nuget/packages/microsoft.io.recyclablememorystream/3.0.1/microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/reactiveui/20.4.1/reactiveui.20.4.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/serilog/4.3.0/serilog.4.3.0.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/serilog.enrichers.thread/4.0.0/serilog.enrichers.thread.4.0.0.nupkg.sha512",
@@ -80,6 +82,7 @@
     "/Users/sgrancharov/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.10/sqlitepclraw.lib.e_sqlite3.2.1.10.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.10/sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "/Users/sgrancharov/.nuget/packages/system.diagnostics.diagnosticsource/8.0.1/system.diagnostics.diagnosticsource.8.0.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/system.reactive/6.0.1/system.reactive.6.0.1.nupkg.sha512",
