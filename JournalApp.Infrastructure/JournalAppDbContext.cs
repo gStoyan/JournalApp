@@ -1,18 +1,19 @@
+using JournalApp.Domain.Journal;
 using JournalApp.Domain.User;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace JournalApp.Infrastructure;
 
-public class JournalAppDbContext(IConfiguration configuration) : DbContext
+public class JournalAppDbContext(DbContextOptions<JournalAppDbContext> options) : DbContext(options)
 {
-    private readonly IConfiguration _configuration = configuration;
-
     public DbSet<User> Users { get; set; }
+    public DbSet<Journal> Journals { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite(_configuration.GetConnectionString("DefaultConnection"));
+        optionsBuilder.UseSqlite(
+            "Data Source=/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db");
+        base.OnConfiguring(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

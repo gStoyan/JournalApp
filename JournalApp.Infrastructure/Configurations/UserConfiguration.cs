@@ -18,5 +18,9 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(u => u.Password)
             .IsRequired();
+
+        builder.HasMany(u => u.Journals)
+            .WithOne(j => j.User)
+            .HasForeignKey(j => j.UserId);
     }
 }

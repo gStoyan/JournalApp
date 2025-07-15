@@ -1,5 +1,7 @@
+using JournalApp.Domain.Journal;
 using JournalApp.Domain.User;
 using JournalApp.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -28,13 +30,16 @@ public static class Registry
             .WriteTo.File(config.GetSection("Logging").GetValue<string>("Path"), rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
+        services.AddDbContext<JournalAppDbContext>(option =>
+            option.UseSqlite(config.GetConnectionString("DefaultConnection")));
+
         services.AddLogging(logging =>
         {
             logging.ClearProviders();
             logging.AddSerilog();
         });
         services.AddSingleton<IConfiguration>(config);
-        services.AddDbContext<JournalAppDbContext>();
+        services.AddSingleton<IJournalRepository, JournalRepository>();
         services.AddSingleton<IUserRepository, UserRepository>();
 
         return services;

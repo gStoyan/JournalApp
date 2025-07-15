@@ -11,4 +11,5 @@ public class User()
     public int Id { get; init; }
     public string UserName { get; init; } = string.Empty;
     public string Password { get; private set; } = string.Empty;
+    public List<Journal.Journal> Journals { get; init; } = new();
 }

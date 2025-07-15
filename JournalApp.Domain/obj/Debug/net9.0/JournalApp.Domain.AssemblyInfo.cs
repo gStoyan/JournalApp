@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JournalApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7971fe14033c62fe9809c5cc31de110dad1c6283")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d64dbdf861f5ae569d4ca2c59610d6122300dc89")]
 [assembly: System.Reflection.AssemblyProductAttribute("JournalApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JournalApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

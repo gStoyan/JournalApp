@@ -4,18 +4,17 @@ namespace JournalApp.Infrastructure.Repositories;
 
 public class UserRepository(JournalAppDbContext dbContext) : IUserRepository
 {
-    public User GetByUsername(string userName)
-    {
-        return dbContext.Users.FirstOrDefault(u => u.UserName == userName) 
-               ?? throw new InvalidOperationException($"User with username '{userName}' not found.");
-    }
-
-
-    public int Add(User user)
+    public async Task<int> Add(User user)
     {
         dbContext.Users.Add(user);
-        dbContext.SaveChanges();
+        await dbContext.SaveChangesAsync();
         return user.Id;
+    }
+
+    public User GetByUsername(string userName)
+    {
+        return dbContext.Users.FirstOrDefault(u => u.UserName == userName)
+               ?? throw new InvalidOperationException($"User with username '{userName}' not found.");
     }
 
     public void Update(User customer)
@@ -28,8 +27,9 @@ public class UserRepository(JournalAppDbContext dbContext) : IUserRepository
         throw new NotImplementedException();
     }
 
-    public User GetBy(Guid id)
+    public User GetById(int id)
     {
-        throw new NotImplementedException();
+        return dbContext.Users.FirstOrDefault(u => u.Id == id)
+               ?? throw new InvalidOperationException($"User with ID '{id}' not found.");
     }
 }

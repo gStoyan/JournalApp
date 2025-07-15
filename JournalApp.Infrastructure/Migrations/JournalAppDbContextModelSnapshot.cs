@@ -14,7 +14,27 @@ namespace JournalApp.Infrastructure.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "9.0.6");
+            modelBuilder.HasAnnotation("ProductVersion", "9.0.7");
+
+            modelBuilder.Entity("JournalApp.Domain.Journal.Journal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Journals");
+                });
 
             modelBuilder.Entity("JournalApp.Domain.User.User", b =>
                 {
@@ -28,11 +48,28 @@ namespace JournalApp.Infrastructure.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("JournalApp.Domain.Journal.Journal", b =>
+                {
+                    b.HasOne("JournalApp.Domain.User.User", "User")
+                        .WithMany("Journals")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("JournalApp.Domain.User.User", b =>
+                {
+                    b.Navigation("Journals");
                 });
 #pragma warning restore 612, 618
         }
