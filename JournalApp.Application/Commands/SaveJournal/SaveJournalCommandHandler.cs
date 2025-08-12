@@ -11,7 +11,10 @@ public class SaveJournalCommandHandler(IJournalRepository journalRepository, IUs
     {
         var user = userRepository.GetById(request.UserId);
         var journal = user.Journals.FirstOrDefault();
-        if (journal == null) return await journalRepository.Add(new Journal(request.Content, request.UserId));
+        if (journal == null)
+            //TODO: Fix this, should not be null
+            return await journalRepository
+                .Add(new Journal(request.UserId, request.Content, "", new List<string>()));
 
         journal.EditContent(request.Content);
         return await journalRepository.Update(journal);

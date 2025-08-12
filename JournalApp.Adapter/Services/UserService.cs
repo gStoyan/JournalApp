@@ -1,3 +1,4 @@
+using AutoMapper;
 using JournalApp.Application.Commands.CreateUser;
 using JournalApp.Application.Commands.LoginUser;
 using JournalApp.Contracts;
@@ -6,8 +7,9 @@ using MediatR;
 
 namespace JournalApp.Adapter.Services;
 
-public class UserService(IMediator mediator) : IUserService
+public class UserService(IMediator mediator, IMapper mapper) : IUserService
 {
+    private readonly IMapper _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     private readonly IMediator _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
 
     public Task<UserDto> GetUserByIdAsync(int userId)
@@ -35,13 +37,11 @@ public class UserService(IMediator mediator) : IUserService
     {
         throw new NotImplementedException();
     }
-    
-    
+
 
     public async Task<int> CreateUserAsync(string userName,
         string password)
     {
-        
         var command = new CreateUserCommand(userName, password);
         var result = await _mediator.Send(command);
 
@@ -53,11 +53,8 @@ public class UserService(IMediator mediator) : IUserService
         var command = new LoginUserCommand(userName, password);
         var result = await _mediator.Send(command);
 
-        var userDto = new UserDto()
-        {
-            UserName = result.UserName,
-            Id = result.Id,
-        };
+        //TODO: add mapping
+        var userDto = _mapper.Map<UserDto>(result);
         return userDto;
     }
 }

@@ -12,7 +12,6 @@ public partial class LoginViewModel(
     IJournalService journalService)
     : PageViewModelBase
 {
-    private readonly IJournalService _journalService = journalService;
     private bool _canNavigateNext;
     public string UserName { get; set; } = string.Empty;
     public string Password { get; set; } = string.Empty;
@@ -42,7 +41,7 @@ public partial class LoginViewModel(
             await MessageBoxHelper.ShowAsync("Login", $"Welcome {user.UserName}!");
 
             CanNavigateNext = true;
-            mainWindowViewModel.NavigateToPage(new JournalViewModel(user, _journalService));
+            mainWindowViewModel.NavigateToPage(new JournalViewModel(user, journalService));
         }
         catch (Exception e)
         {

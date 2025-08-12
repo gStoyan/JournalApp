@@ -1,4 +1,5 @@
-﻿using JournalApp.Adapter.Services;
+﻿using JournalApp.Adapter.Mapper;
+using JournalApp.Adapter.Services;
 using JournalApp.Contracts.Services;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,6 +11,10 @@ public static class Registry
     {
         services.AddSingleton<IUserService, UserService>();
         services.AddSingleton<IJournalService, JournalService>();
+
+        services.AddAutoMapper(
+            cfg => cfg.AddProfile<MappingProfile>(),
+            typeof(Registry).Assembly);
         return services;
     }
 }

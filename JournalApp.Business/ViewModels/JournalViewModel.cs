@@ -6,19 +6,9 @@ using JournalApp.Contracts.Services;
 
 namespace JournalApp.Business.ViewModels;
 
-public partial class JournalViewModel : PageViewModelBase
+public partial class JournalViewModel(UserDto user, IJournalService journalService) : PageViewModelBase
 {
-    private readonly IJournalService _journalService;
-    private readonly UserDto _user;
-
-    public JournalViewModel(UserDto user, IJournalService journalService)
-    {
-        _user = user ?? throw new ArgumentNullException(nameof(user));
-        _journalService = journalService;
-        Content = "Welcome to your journal, " + _user.UserName + "!";
-    }
-
-    public string Content { get; set; }
+    public string Content { get; set; } = user.Journals.Count > 0 ? user.Journals[0].Content : string.Empty;
     public override bool CanNavigateNext { get; protected set; } = false;
 
     public override bool CanNavigatePrevious { get; protected set; } = true;
@@ -35,7 +25,7 @@ public partial class JournalViewModel : PageViewModelBase
 
         try
         {
-            await _journalService.SaveJournal(Content, _user.Id);
+            await journalService.SaveJournal(Content, user.Id);
             await MessageBoxHelper.ShowAsync("Save", "Journal entry saved successfully.");
         }
         catch (Exception e)

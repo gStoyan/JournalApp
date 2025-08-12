@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hC5dkHuIe7s=",
+  "dgSpecHash": "3U4PGT6zNTs=",
   "success": true,
   "projectFilePath": "/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/JournalApp.Presentation.csproj",
   "expectedPackageFiles": [
+    "/Users/sgrancharov/.nuget/packages/automapper/15.0.1/automapper.15.0.1.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia/11.3.2/avalonia.11.3.2.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia.angle.windows.natives/2.1.25547.20250602/avalonia.angle.windows.natives.2.1.25547.20250602.nupkg.sha512",
     "/Users/sgrancharov/.nuget/packages/avalonia.buildservices/0.0.31/avalonia.buildservices.0.0.31.nupkg.sha512",

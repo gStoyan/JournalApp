@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "AutoMapper/15.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0",
+          "Microsoft.IdentityModel.JsonWebTokens": "8.0.1"
+        },
+        "compile": {
+          "lib/net9.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Avalonia/11.3.2": {
         "type": "package",
         "dependencies": {
@@ -2204,6 +2222,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "AutoMapper": "15.0.1",
           "JournalApp.Contracts": "1.0.0",
           "JournalApp.Domain": "1.0.0",
           "JournalApp.Infrastructure": "1.0.0"
@@ -2296,6 +2315,26 @@
     }
   },
   "libraries": {
+    "AutoMapper/15.0.1": {
+      "sha512": "kNo7iIAi4p4XxoEbfif2WUQtc6RTx+UteiRYPqCOKj+4q4+YaWono06qTxoHBy+0N1HdganA//k5p/VmWw2AMA==",
+      "type": "package",
+      "path": "automapper/15.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "automapper.15.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net8.0/AutoMapper.dll",
+        "lib/net8.0/AutoMapper.xml",
+        "lib/net9.0/AutoMapper.dll",
+        "lib/net9.0/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
     "Avalonia/11.3.2": {
       "sha512": "3w1v4/wEpHFq6WWVNyyrne2Jyz5bdQvnK3AW36rCto42L+AtdbnO/SG2SIqJ7ObXJl+Y3LXz2XDGx9Blzqduow==",
       "type": "package",

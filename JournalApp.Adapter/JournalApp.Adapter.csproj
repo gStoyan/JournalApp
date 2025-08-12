@@ -12,4 +12,8 @@
         <ProjectReference Include="..\JournalApp.Infrastructure\JournalApp.Infrastructure.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="15.0.1"/>
+    </ItemGroup>
+
 </Project>

@@ -18,7 +18,6 @@
 
         <TextBox Grid.Row="1" Name="JournalTextBox"
                  AcceptsReturn="True"
-                 IsReadOnly="True"
                  TextWrapping="Wrap"
                  FontSize="14"
                  FontFamily="Consolas"
