@@ -26,6 +26,14 @@ namespace JournalApp.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.PrimitiveCollection<string>("Images")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("UserId")
                         .HasColumnType("INTEGER");
 
@@ -48,7 +56,6 @@ namespace JournalApp.Infrastructure.Migrations
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

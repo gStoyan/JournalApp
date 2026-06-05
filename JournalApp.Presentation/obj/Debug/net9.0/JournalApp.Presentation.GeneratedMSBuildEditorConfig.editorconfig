@@ -48,3 +48,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Presentation/Views/ProfileView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

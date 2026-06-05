@@ -41,10 +41,11 @@ public partial class LoginViewModel(
             await MessageBoxHelper.ShowAsync("Login", $"Welcome {user.UserName}!");
 
             CanNavigateNext = true;
-            mainWindowViewModel.NavigateToPage(new JournalViewModel(user, journalService));
+            mainWindowViewModel.NavigateToPage(new ProfileViewModel());
         }
         catch (Exception e)
         {
+            await MessageBoxHelper.ShowAsync("Login Failed", "Invalid username or password. Please try again.");
             throw new InvalidOperationException("Failed to login user.", e);
         }
     }
