@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build JournalApp",
+      "type": "shell",
+      "command": "dotnet",
+      "args": ["build", "${workspaceFolder}/JournalApp.sln"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "run JournalApp.Presentation",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/JournalApp.Presentation/JournalApp.Presentation.csproj"
+      ],
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "watch JournalApp.Presentation",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/JournalApp.Presentation/JournalApp.Presentation.csproj",
+        "run"
+      ],
+      "isBackground": true,
+      "problemMatcher": ["$msCompile"]
+    }
+  ]
+}

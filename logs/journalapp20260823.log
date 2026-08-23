@@ -1,0 +1,257 @@
+2026-08-23 19:36:11.252 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-08-23 19:36:20.870 +03:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-23 19:36:21.106 +03:00 [DBG] Entity Framework Core 9.0.7 initialized 'JournalAppDbContext' using provider 'Microsoft.EntityFrameworkCore.Sqlite:9.0.7' with options: None
+2026-08-23 19:36:21.129 +03:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Include(u => u.Journals)
+    .FirstOrDefault(u => u.UserName == __userName_0)'
+2026-08-23 19:36:21.150 +03:00 [DBG] Including navigation: 'User.Journals'.
+2026-08-23 19:36:21.259 +03:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Password (string) Required, 1], [Property: User.UserName (string) Required, 2] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: Journal.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 3], [Property: Journal.Content (string) Required, 4], [Property: Journal.Images (List<string>) Required Element type: string Required, 5], [Property: Journal.Title (string) Required, 6], [Property: Journal.UserId (int) Required FK Index, 7] }
+                3 -> 3
+            SELECT u0.Id, u0.Password, u0.UserName, j.Id, j.Content, j.Images, j.Title, j.UserId
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.Password, u.UserName
+                FROM Users AS u
+                WHERE u.UserName == @__userName_0
+            ) AS u0
+            LEFT JOIN Journals AS j ON u0.Id == j.UserId
+            ORDER BY u0.Id ASC) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Password (string) Required, 1], [Property: User.UserName (string) Required, 2] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: Journal.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 3], [Property: Journal.Content (string) Required, 4], [Property: Journal.Images (List<string>) Required Element type: string Required, 5], [Property: Journal.Title (string) Required, 6], [Property: Journal.UserId (int) Required FK Index, 7] }
+                3 -> 3
+            SELECT u0.Id, u0.Password, u0.UserName, j.Id, j.Content, j.Images, j.Title, j.UserId
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.Password, u.UserName
+                FROM Users AS u
+                WHERE u.UserName == @__userName_0
+            ) AS u0
+            LEFT JOIN Journals AS j ON u0.Id == j.UserId
+            ORDER BY u0.Id ASC, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            resultContext.Values == null ? 
+            {
+                User entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext1;
+                    IEntityType entityType1;
+                    User instance1;
+                    InternalEntityEntry entry1;
+                    bool hasNullKey1;
+                    materializationContext1 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance1 = default(User);
+                    entry1 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User").FindPrimaryKey()], 
+                        keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                        throwOnNullKey: True, 
+                        hasNullKey: hasNullKey1);
+                    !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                    {
+                        entityType1 = entry1.EntityType;
+                        return instance1 = (User)entry1.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot1;
+                        shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User")];
+                        instance1 = switch (entityType1)
+                        {
+                            case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User")]: 
+                                {
+                                    return 
+                                    {
+                                        User instance;
+                                        instance = new User();
+                                        instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                        instance.<Password>k__BackingField = dataReader.GetString(1);
+                                        instance.<UserName>k__BackingField = dataReader.GetString(2);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext1.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(User)
+                        }
+                        ;
+                        entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType1, 
+                            entity: instance1, 
+                            snapshot: shadowSnapshot1);
+                        return instance1;
+                    } : default(void);
+                    return instance1;
+                };
+                resultContext.Values = new object[]{ entity };
+                ShaperProcessingExpressionVisitor.InitializeIncludeCollection<User, User>(
+                    collectionId: 0, 
+                    queryContext: queryContext, 
+                    dbDataReader: dataReader, 
+                    resultCoordinator: resultCoordinator, 
+                    entity: (User)(resultContext.Values[0]), 
+                    parentIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                    outerIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                    navigation: [LIFTABLE Constant: Navigation: User.Journals (List<Journal>) Collection ToDependent Journal Inverse: User | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User").FindNavigation("Journals")], 
+                    clrCollectionAccessor: [LIFTABLE Constant: ClrICollectionAccessor<User, List<Journal>, Journal> | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User").FindNavigation("Journals").GetCollectionAccessor()], 
+                    trackingQuery: True, 
+                    setLoaded: True);
+            } : default(void);
+            ShaperProcessingExpressionVisitor.PopulateIncludeCollection<User, Journal>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                parentIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                outerIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }], 
+                selfIdentifier: [LIFTABLE Constant: Func<QueryContext, DbDataReader, object[]> | Resolver: _ => (queryContext, dataReader) => new object[]{ (object)dataReader.IsDBNull(3) ? default(int?) : (int?)dataReader.GetInt32(3) }], 
+                parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+                {
+                    Journal entity;
+                    entity = 
+                    {
+                        MaterializationContext materializationContext2;
+                        IEntityType entityType2;
+                        Journal instance2;
+                        InternalEntityEntry entry2;
+                        bool hasNullKey2;
+                        materializationContext2 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance2 = default(Journal);
+                        entry2 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: Journal.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(3) ? default(object) : (object)dataReader.GetInt32(3) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey2);
+                        !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                        {
+                            entityType2 = entry2.EntityType;
+                            return instance2 = (Journal)entry2.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot2;
+                            shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType2 = [LIFTABLE Constant: EntityType: Journal | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal")];
+                            instance2 = switch (entityType2)
+                            {
+                                case [LIFTABLE Constant: EntityType: Journal | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal")]: 
+                                    {
+                                        return 
+                                        {
+                                            Journal instance;
+                                            instance = new Journal();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(3) ? default(int) : dataReader.GetInt32(3);
+                                            instance.<Content>k__BackingField = dataReader.IsDBNull(4) ? default(string) : dataReader.GetString(4);
+                                            {
+                                                List<string> namelessParameter{7};
+                                                namelessParameter{7} = instance.<Images>k__BackingField;
+                                                namelessParameter{7} == null || dataReader.IsDBNull(5) ? default(List<string>) : (List<string>)Invoke(((CollectionToJsonStringConverter<string>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Journal.Images (List<string>) Required Element type: string Required | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal").FindProperty("Images")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetString(5)) == null || namelessParameter{7}.IsReadOnly ? instance.<Images>k__BackingField = dataReader.IsDBNull(5) ? default(List<string>) : (List<string>)Invoke(((CollectionToJsonStringConverter<string>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Journal.Images (List<string>) Required Element type: string Required | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal").FindProperty("Images")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetString(5)) : EntityMaterializerSource.PopulateList<string>(
+                                                    buffer: dataReader.IsDBNull(5) ? default(List<string>) : (List<string>)Invoke(((CollectionToJsonStringConverter<string>)((IReadOnlyProperty)[LIFTABLE Constant: Property: Journal.Images (List<string>) Required Element type: string Required | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal").FindProperty("Images")]).GetTypeMapping().Converter).ConvertFromProviderTyped, dataReader.GetString(5)), 
+                                                    target: namelessParameter{7});
+                                            }instance.<Title>k__BackingField = dataReader.IsDBNull(6) ? default(string) : dataReader.GetString(6);
+                                            instance.<UserId>k__BackingField = dataReader.IsDBNull(7) ? default(int) : dataReader.GetInt32(7);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext2.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: Journal | Resolver: namelessParameter{11} => namelessParameter{11}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(Journal)
+                            }
+                            ;
+                            entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType2, 
+                                entity: instance2, 
+                                snapshot: shadowSnapshot2);
+                            return instance2;
+                        } : default(void);
+                        return instance2;
+                    };
+                    return entity;
+                }, 
+                inverseNavigation: [LIFTABLE Constant: Navigation: Journal.User (User) ToPrincipal User Inverse: Journals | Resolver: namelessParameter{12} => namelessParameter{12}.Dependencies.Model.FindEntityType("JournalApp.Domain.Journal.Journal").FindNavigation("User")], 
+                fixup: (namelessParameter{13}, namelessParameter{14}) => 
+                {
+                    [LIFTABLE Constant: ClrICollectionAccessor<User, List<Journal>, Journal> | Resolver: namelessParameter{15} => namelessParameter{15}.Dependencies.Model.FindEntityType("JournalApp.Domain.User.User").FindNavigation("Journals").GetCollectionAccessor()].Add(
+                        entity: namelessParameter{13}, 
+                        value: namelessParameter{14}, 
+                        forMaterialization: True);
+                    return namelessParameter{14}.<User>k__BackingField = namelessParameter{13};
+                }, 
+                trackingQuery: True);
+            return IsTrue(resultCoordinator.ResultReady)
+             ? (User)(resultContext.Values[0]) : default(User);
+        }, 
+        contextType: JournalApp.Infrastructure.JournalAppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-23 19:36:21.274 +03:00 [DBG] Creating DbConnection.
+2026-08-23 19:36:21.278 +03:00 [DBG] Created DbConnection. (3ms).
+2026-08-23 19:36:21.280 +03:00 [DBG] Opening connection to database 'main' on server '/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db'.
+2026-08-23 19:36:21.285 +03:00 [DBG] Opened connection to database 'main' on server '/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db'.
+2026-08-23 19:36:21.286 +03:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-23 19:36:21.288 +03:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-23 19:36:21.289 +03:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2026-08-23 19:36:21.291 +03:00 [DBG] Executing DbCommand [Parameters=[@__userName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u0"."Id", "u0"."Password", "u0"."UserName", "j"."Id", "j"."Content", "j"."Images", "j"."Title", "j"."UserId"
+FROM (
+    SELECT "u"."Id", "u"."Password", "u"."UserName"
+    FROM "Users" AS "u"
+    WHERE "u"."UserName" = @__userName_0
+    LIMIT 1
+) AS "u0"
+LEFT JOIN "Journals" AS "j" ON "u0"."Id" = "j"."UserId"
+ORDER BY "u0"."Id"
+2026-08-23 19:36:21.302 +03:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userName_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u0"."Id", "u0"."Password", "u0"."UserName", "j"."Id", "j"."Content", "j"."Images", "j"."Title", "j"."UserId"
+FROM (
+    SELECT "u"."Id", "u"."Password", "u"."UserName"
+    FROM "Users" AS "u"
+    WHERE "u"."UserName" = @__userName_0
+    LIMIT 1
+) AS "u0"
+LEFT JOIN "Journals" AS "j" ON "u0"."Id" = "j"."UserId"
+ORDER BY "u0"."Id"
+2026-08-23 19:36:21.314 +03:00 [DBG] Context 'JournalAppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-23 19:36:21.323 +03:00 [DBG] Closing data reader to 'main' on server '/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db'.
+2026-08-23 19:36:21.325 +03:00 [DBG] A data reader for 'main' on server '/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db' is being disposed after spending 20ms reading results.
+2026-08-23 19:36:21.326 +03:00 [DBG] Closing connection to database 'main' on server '/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db'.
+2026-08-23 19:36:21.327 +03:00 [DBG] Closed connection to database 'main' on server '/Users/sgrancharov/dev/dotnet/JournalApp/JournalApp/JournalApp.Infrastructure/JournalApp.db' (1ms).
+2026-08-23 19:37:03.930 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-08-23 19:38:37.591 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.

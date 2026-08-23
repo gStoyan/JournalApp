@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch JournalApp (Avalonia)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build JournalApp",
+      "program": "${workspaceFolder}/JournalApp.Presentation/bin/Debug/net9.0/JournalApp.Presentation.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/JournalApp.Presentation",
+      "console": "integratedTerminal",
+      "stopAtEntry": false
+    }
+  ]
+}
