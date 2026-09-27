@@ -11,7 +11,7 @@ public class Journal()
     }
 
     public int Id { get; init; }
-    public string Title { get; init; } = string.Empty;
+    public string Title { get; private set; } = string.Empty;
     public string Content { get; set; } = string.Empty;
     public int UserId { get; init; }
     public User.User User { get; init; } = null!;
@@ -24,5 +24,14 @@ public class Journal()
             throw new ArgumentException("Content cannot be empty.", nameof(newContent));
 
         Content = newContent;
+    }
+
+    public void Edit(string newTitle, string newContent)
+    {
+        if (string.IsNullOrWhiteSpace(newTitle))
+            throw new ArgumentException("Title cannot be empty.", nameof(newTitle));
+
+        EditContent(newContent);
+        Title = newTitle;
     }
 }

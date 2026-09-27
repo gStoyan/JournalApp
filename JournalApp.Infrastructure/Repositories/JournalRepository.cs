@@ -1,4 +1,5 @@
 using JournalApp.Domain.Journal;
+using Microsoft.EntityFrameworkCore;
 
 namespace JournalApp.Infrastructure.Repositories;
 
@@ -18,13 +19,18 @@ public class JournalRepository(JournalAppDbContext dbContext) : IJournalReposito
         return journal.Id;
     }
 
-    public void Delete(Guid journalId)
+    public async Task Delete(int journalId)
     {
-        throw new NotImplementedException();
+        var journal = await dbContext.Journals.FirstOrDefaultAsync(item => item.Id == journalId)
+                      ?? throw new InvalidOperationException($"Journal with ID '{journalId}' not found.");
+
+        dbContext.Journals.Remove(journal);
+        await dbContext.SaveChangesAsync();
     }
 
-    public Journal GetBy(Guid id)
+    public Journal GetBy(int id)
     {
-        throw new NotImplementedException();
+        return dbContext.Journals.FirstOrDefault(item => item.Id == id)
+               ?? throw new InvalidOperationException($"Journal with ID '{id}' not found.");
     }
 }

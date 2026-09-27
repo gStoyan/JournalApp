@@ -8,7 +8,7 @@ public class CreateJournalCommandHandler(IJournalRepository journalRepository)
 {
     public Task<int> Handle(CreateJournalCommand request, CancellationToken cancellationToken)
     {
-        var journal = new Journal();
+        var journal = new Journal(request.UserId, request.Content, request.Title, request.Images);
 
         return journalRepository.Add(journal);
     }

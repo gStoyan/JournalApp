@@ -9,6 +9,7 @@ namespace JournalApp.Business.ViewModels;
 public partial class LoginViewModel(
     IUserService userService,
     MainWindowViewModel mainWindowViewModel,
+    IUserSessionContext userSessionContext,
     IJournalService journalService)
     : PageViewModelBase
 {
@@ -38,10 +39,11 @@ public partial class LoginViewModel(
         try
         {
             var user = await userService.LoginAsync(UserName, Password);
+            userSessionContext.SetCurrentUser(user);
             await MessageBoxHelper.ShowAsync("Login", $"Welcome {user.UserName}!");
 
             CanNavigateNext = true;
-            mainWindowViewModel.NavigateToPage(new ProfileViewModel());
+            mainWindowViewModel.NavigateToPage(new ProfileViewModel(mainWindowViewModel, userSessionContext, journalService));
         }
         catch (Exception e)
         {

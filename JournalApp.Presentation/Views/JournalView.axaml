@@ -6,17 +6,18 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="JournalApp.Presentation.Views.JournalView"
              x:DataType="viewModels:JournalViewModel">
-    <Design.DataContext>
-        <viewModels:JournalViewModel />
-    </Design.DataContext>
-
-    <Grid Margin="10" RowDefinitions="Auto,*,50">
+    <Grid Margin="10" RowDefinitions="Auto,Auto,*,50">
         <TextBlock Text="Journal"
                    FontSize="24"
                    FontWeight="Bold"
                    Margin="0 0 0 10" />
 
-        <TextBox Grid.Row="1" Name="JournalTextBox"
+        <TextBox Grid.Row="1"
+                 Watermark="Title"
+                 Margin="0,0,0,10"
+                 Text="{Binding Title}" />
+
+        <TextBox Grid.Row="2" Name="JournalTextBox"
                  AcceptsReturn="True"
                  TextWrapping="Wrap"
                  FontSize="14"
@@ -24,14 +25,10 @@
                  Text="{Binding Content }" />
 
         <!-- Buttons -->
-        <StackPanel Grid.Row="2"
+        <StackPanel Grid.Row="3"
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     Spacing="10">
-            <Button Content="Create New"
-                    Background="#007acc" Foreground="White"
-                    Width="100" HorizontalAlignment="Center"
-                    Command="{Binding CreateNewCommand}" />
             <Button Content="Save"
                     Background="#007acc" Foreground="White"
                     Width="100" HorizontalAlignment="Center"

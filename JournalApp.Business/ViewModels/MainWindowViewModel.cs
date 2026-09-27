@@ -9,16 +9,17 @@ namespace JournalApp.Business.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     private readonly PageViewModelBase[] _pages;
+    private readonly Stack<PageViewModelBase> _navigationHistory = new();
 
     private PageViewModelBase _currentPage;
     private string _nextButtonContent = "Login";
 
-    public MainWindowViewModel(IUserService userService, IJournalService journalService)
+    public MainWindowViewModel(IUserService userService, IUserSessionContext userSessionContext, IJournalService journalService)
     {
         _pages =
         [
             new HomeViewModel(userService),
-            new LoginViewModel(userService, this, journalService)
+            new LoginViewModel(userService, this, userSessionContext, journalService)
         ];
 
         _currentPage = _pages[0];
@@ -49,7 +50,10 @@ public partial class MainWindowViewModel : ViewModelBase
 
     public void NavigateToPage(PageViewModelBase page)
     {
-        CurrentPage = page ?? throw new ArgumentNullException(nameof(page));
+        ArgumentNullException.ThrowIfNull(page);
+
+        _navigationHistory.Push(CurrentPage);
+        SetCurrentPage(page);
     }
 
     private void NavigateNext()
@@ -57,23 +61,25 @@ public partial class MainWindowViewModel : ViewModelBase
         var index = _pages.IndexOf(_currentPage) + 1;
 
         if (index >= _pages.Length) return;
-        CurrentPage = _pages[index];
-
-        NextButtonContent = index == 0 ? "Login" : "Continue";
+        _navigationHistory.Push(CurrentPage);
+        SetCurrentPage(_pages[index]);
     }
 
 
     private void NavigatePrevious()
     {
-        var index = _pages.IndexOf(_currentPage) - 1;
-
-        if (index < 0)
+        if (_navigationHistory.Count == 0)
         {
-            CurrentPage = _pages[0];
+            SetCurrentPage(_pages[0]);
             return;
         }
 
-        CurrentPage = _pages[index];
-        NextButtonContent = index == 0 ? "Login" : "Continue";
+        SetCurrentPage(_navigationHistory.Pop());
+    }
+
+    private void SetCurrentPage(PageViewModelBase page)
+    {
+        CurrentPage = page;
+        NextButtonContent = ReferenceEquals(page, _pages[0]) ? "Login" : "Continue";
     }
 }
